@@ -1,0 +1,12 @@
+name: viz_tool_env
+channels:
+  - defaults
+dependencies:
+  - pandas
+  - seaborn
+  - plotly
+  - librosa
+  - ipywidgets
+  - umap-learn
+  - voila
+prefix: /home/mthomas/anaconda3/envs/viz_tool_env
