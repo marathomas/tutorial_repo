@@ -6,7 +6,7 @@ import librosa
 from scipy.signal import butter, lfilter
 
 
-def generate_mel_spectrogram(data, rate, n_mels, window, fft_win , fft_hop, fmax):
+def generate_mel_spectrogram(data, rate, n_mels, window, fft_win , fft_hop, fmax, fmin=0):
     
     """
     Function that generates mel spectrogram from audio data using librosa functions
@@ -46,6 +46,7 @@ def generate_mel_spectrogram(data, rate, n_mels, window, fft_win , fft_hop, fmax
                                            sr = rate, 
                                            n_mels = n_mels , 
                                            fmax = fmax, 
+                                           fmin = fmin,
                                            n_fft = n_fft,
                                            hop_length = hop_length, 
                                            window = window, 
@@ -56,47 +57,6 @@ def generate_mel_spectrogram(data, rate, n_mels, window, fft_win , fft_hop, fmax
         print("Failed to generate spectrogram.")
 
     return spectro
-
-
-
-
-def read_wavfile(filename, channel=0):    
-    """
-    Function that reads audio data and sr from audiofile
-    If audio is stereo, channel 0 is selected by default.
-
-    Parameters
-    ----------
-    filename: String
-              path to wav file
-    
-    channel: Integer (0 or 1)
-             which channel is selected for stereo files
-             default is 0
-          
-    Returns
-    -------
-    data : 1D np.array
-           Raw audio data (Amplitude)
-           
-    sr: numeric (Integer)
-        Samplerate (in Hz)
-    """
-    data = np.nan
-    sr = np.nan
-    
-    if os.path.exists(filename):
-        try:
-            data, sr = sf.read(filename)
-            if data.ndim>1:
-                data = data[:,channel]
-        except:
-            print("Couldn't read: ", filename)
-    else:
-        print("No such file or directory: ", filename)
-
-
-    return data, sr
 
 
 def generate_stretched_mel_spectrogram(data, sr, duration, n_mels, window, fft_win , fft_hop, MAX_DURATION):
@@ -154,6 +114,44 @@ def generate_stretched_mel_spectrogram(data, sr, duration, n_mels, window, fft_w
     s = librosa.power_to_db(spectro, ref=np.max)
 
     return s
+
+def read_wavfile(filename, channel=0):    
+    """
+    Function that reads audio data and sr from audiofile
+    If audio is stereo, channel 0 is selected by default.
+
+    Parameters
+    ----------
+    filename: String
+              path to wav file
+    
+    channel: Integer (0 or 1)
+             which channel is selected for stereo files
+             default is 0
+          
+    Returns
+    -------
+    data : 1D np.array
+           Raw audio data (Amplitude)
+           
+    sr: numeric (Integer)
+        Samplerate (in Hz)
+    """
+    data = np.nan
+    sr = np.nan
+    
+    if os.path.exists(filename):
+        try:
+            data, sr = sf.read(filename)
+            if data.ndim>1:
+                data = data[:,channel]
+        except:
+            print("Couldn't read: ", filename)
+    else:
+        print("No such file or directory: ", filename)
+
+
+    return data, sr
 
 
 
