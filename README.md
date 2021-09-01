@@ -85,15 +85,15 @@ Structure of info_file.csv:
 
 ## Structure
 
-- Start with 01_generate_spectrograms.ipynb to generate spectrograms from input audio files.
-- Generate latent space representations with 02a_generate_UMAP_basic.ipynb OR 02b_generate_UMAP_timeshift.ipynb 
+### 1. Start with 01_generate_spectrograms.ipynb to generate spectrograms from input audio files.
+### 2. Generate latent space representations with 02a_generate_UMAP_basic.ipynb OR 02b_generate_UMAP_timeshift.ipynb 
 
-- You can now 
-... evaluate the latent space representation with 03_UMAP_eval.ipynb,
+### 3. You can now 
+- evaluate the latent space representation with 03_UMAP_eval.ipynb,
  
-... visualize it by running 03_UMAP_viz_part_1_prep.ipynb and 03_UMAP_viz_part_2_tool.ipynb or
+- visualize it by running 03_UMAP_viz_part_1_prep.ipynb and 03_UMAP_viz_part_2_tool.ipynb or
 
-... apply clustering on the latent space representation with 03_UMAP_clustering.ipynb 
+- apply clustering on the latent space representation with 03_UMAP_clustering.ipynb 
 
 
 ## Data accessibility
