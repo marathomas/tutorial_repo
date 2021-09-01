@@ -1,5 +1,4 @@
-# tutorial_repo
-Tutorial for generating and evaluating latent-space representations of vocalizations using UMAP
+# Tutorial for generating and evaluating latent-space representations of vocalizations using UMAP
 
 ## About
 
@@ -40,16 +39,27 @@ This tutorial contains a sequence of jupyter notebook files that help you genera
 A conda environment file is included in /environments. For manual install, these are the core packages:
 
 >umap-learn
+
 >librosa
+
 >ipywidgets
+
 >pandas=1.2.4
+
 >seaborn
+
 >pysoundfile=0.10.3
+
 >voila
+
 >graphviz
+
 >hdbscan
+
 >plotly
+
 >networkx
+
 >pygraphviz
 
 Make sure to enable jupyter widgets with:
