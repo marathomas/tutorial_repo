@@ -66,9 +66,9 @@ Make sure to enable jupyter widgets with:
 >jupyter nbextension enable --py widgetsnbextension
 
 
-### Input
+### Input requirements
 
-#### Audio files
+#### 1. Audio files
 
 You need a dataset of sound files, each containing a single vocalization or syllable as input (in /audio). 
 (You may have to detect and extract such vocal elements first, if working with acoustic recordings.)
@@ -79,7 +79,7 @@ Otherwise, vocalizations may appear dissimilar or distant in latent space simply
 If it is not possible to mark the start times correctly, use the timeshift option to generate UMAP embeddings,
 but note that it comes at the cost of increased computation time.
 
-#### Info file
+#### 2. Info file
 
 You need a ";"-separated .csv file with headers containing the filenames of the input audio, some labels and any other additional metadata (if avilable). 
 If some or all labels are unknown, there should still be a label column and unkown labels should be marked with "unknown".
@@ -95,10 +95,10 @@ Structure of info_file.csv:
 
 ## Structure
 
-### 1. Start with 01_generate_spectrograms.ipynb to generate spectrograms from input audio files.
-### 2. Generate latent space representations with 02a_generate_UMAP_basic.ipynb OR 02b_generate_UMAP_timeshift.ipynb 
+1. Start with 01_generate_spectrograms.ipynb to generate spectrograms from input audio files.
+2. Generate latent space representations with 02a_generate_UMAP_basic.ipynb OR 02b_generate_UMAP_timeshift.ipynb 
 
-### 3. You can now 
+3. You can now 
 - evaluate the latent space representation with 03_UMAP_eval.ipynb,
  
 - visualize it by running 03_UMAP_viz_part_1_prep.ipynb and 03_UMAP_viz_part_2_tool.ipynb or
