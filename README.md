@@ -26,6 +26,8 @@ This tutorial contains a sequence of jupyter notebook files that help you genera
     │   └── preprocessing_functions.py    
     ├── data 
     │   └── info_file.csv                      <- input metadata file
+    ├── parameters                             
+    │   └── spec_params.py                     
     ├── environments 
     │   └── umap_tut_env.yaml
     ├── ... 
@@ -35,7 +37,7 @@ This tutorial contains a sequence of jupyter notebook files that help you genera
 
 ### 2.1. Packages, installations etc.
 
-A conda environment file is included in /environments. For manual install, these are the core packages:
+Python>=3.8. is recommended. A conda environment file is included in /environments. For manual install, these are the core packages:
 
 >umap-learn
 
@@ -98,11 +100,11 @@ Structure of info_file.csv:
 2. Generate latent space representations with 02a_generate_UMAP_basic.ipynb OR 02b_generate_UMAP_timeshift.ipynb 
 
 3. You can now 
-- __evaluate__ the latent space representation with 03_UMAP_eval.ipynb,
+- __Evaluate__ the latent space representation with 03_UMAP_eval.ipynb,
  
-- __visualize__ the latent space representation by running 03_UMAP_viz_part_1_prep.ipynb and 03_UMAP_viz_part_2_tool.ipynb or
+- __Visualize__ the latent space representation by running 03_UMAP_viz_part_1_prep.ipynb and 03_UMAP_viz_part_2_tool.ipynb or
 
-- __apply clustering__ on the latent space representation with 03_UMAP_clustering.ipynb 
+- __Apply clustering__ on the latent space representation with 03_UMAP_clustering.ipynb 
 
 
 ## 4. Data accessibility
