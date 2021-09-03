@@ -72,20 +72,32 @@ This is an example for a manual installation on Windows with Python 3.8.:
 
 First, create your environment
 > conda create my_env
+
 > conda activate my_env
 
 Then, install the required core packages:
 > conda install -c conda-forge umap-learn
+
 > conda install -c conda-forge librosa
+
 > conda install ipywidgets
+
 > conda install pandas=1.2.4
+
 > conda install seaborn
+
 > conda install -c conda-forge pysoundfile=0.10.3
+
 > conda install -c conda-forge voila
+
 > conda install -c anaconda graphviz
+
 > conda install -c conda-forge hdbscan
+
 > conda install -c plotly plotly
+
 > conda install networkx
+
 > conda install -c conda-forge pygraphviz
 
 Finally, enable ipywidgets in jupyter notebook
