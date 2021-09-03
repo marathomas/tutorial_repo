@@ -37,7 +37,9 @@ This tutorial contains a sequence of jupyter notebook files that help you genera
 
 ### 2.1. Packages, installations etc.
 
-Python>=3.8. is recommended. A conda environment file is included in /environments. For manual install, these are the core packages:
+Python>=3.8. is recommended. A conda environment file is included in /environments. This file was created on Linux, so if you have a different operating system, the package dependencies might be different and I would recommend to __install the packages manually__. 
+
+For manual install, these are the core packages:
 
 >umap-learn
 
@@ -66,7 +68,36 @@ Python>=3.8. is recommended. A conda environment file is included in /environmen
 Make sure to enable jupyter widgets with:
 >jupyter nbextension enable --py widgetsnbextension
 
+#### This is an example for a manual installation on Windows with Python 3.8.:
 
+First, create your environment
+```
+conda create my_env
+conda activate my_env
+```
+
+Then, install the required core packages:
+
+```
+conda install -c conda-forge umap-learn
+conda install -c conda-forge librosa
+conda install ipywidgets
+conda install pandas=1.2.4
+conda install seaborn
+conda install -c conda-forge pysoundfile=0.10.3
+conda install -c conda-forge voila
+conda install -c anaconda graphviz
+conda install -c conda-forge hdbscan
+conda install -c plotly plotly
+conda install networkx
+conda install -c conda-forge pygraphviz
+```
+
+Finally, enable ipywidgets in jupyter notebook
+
+```
+jupyter nbextension enable --py widgetsnbextension
+```
 ### 2.2. Input requirements
 
 #### 2.2.1. Audio files
@@ -110,3 +141,4 @@ Structure of info_file.csv:
 ## 4. Data accessibility
 
 This data is part of an ongoing study and is protected by copyright law, meaning that no one may reproduce, distribute, or create derivative works from it. If you want to access data, please get in touch.
+
