@@ -37,7 +37,7 @@ This tutorial contains a sequence of jupyter notebook files that help you genera
 
 ### 2.1. Packages, installations etc.
 
-Python>=3.8. is recommended. A conda environment file is included in /environments. This file was created on Linux, so if you have a different operating system, the package dependencies might be different and I would recommend to install the packages manually. 
+Python>=3.8. is recommended. A conda environment file is included in /environments. This file was created on Linux, so if you have a different operating system, the package dependencies might be different and I would recommend to __install the packages manually__. 
 
 For manual install, these are the core packages:
 
