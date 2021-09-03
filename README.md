@@ -71,12 +71,14 @@ Make sure to enable jupyter widgets with:
 #### This is an example for a manual installation on Windows with Python 3.8.:
 
 First, create your environment
-> conda create my_env
-
-> conda activate my_env
+```
+conda create my_env
+conda activate my_env
+```
 
 Then, install the required core packages:
-'''
+
+
 > conda install -c conda-forge umap-learn
 
 > conda install -c conda-forge librosa
@@ -100,7 +102,7 @@ Then, install the required core packages:
 > conda install networkx
 
 > conda install -c conda-forge pygraphviz
-'''
+
 Finally, enable ipywidgets in jupyter notebook
 > jupyter nbextension enable --py widgetsnbextension
 
