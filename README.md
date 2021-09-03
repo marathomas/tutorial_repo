@@ -78,34 +78,26 @@ conda activate my_env
 
 Then, install the required core packages:
 
-
-> conda install -c conda-forge umap-learn
-
-> conda install -c conda-forge librosa
-
-> conda install ipywidgets
-
-> conda install pandas=1.2.4
-
-> conda install seaborn
-
-> conda install -c conda-forge pysoundfile=0.10.3
-
-> conda install -c conda-forge voila
-
-> conda install -c anaconda graphviz
-
-> conda install -c conda-forge hdbscan
-
-> conda install -c plotly plotly
-
-> conda install networkx
-
-> conda install -c conda-forge pygraphviz
+```
+conda install -c conda-forge umap-learn
+conda install -c conda-forge librosa
+conda install ipywidgets
+conda install pandas=1.2.4
+conda install seaborn
+conda install -c conda-forge pysoundfile=0.10.3
+conda install -c conda-forge voila
+conda install -c anaconda graphviz
+conda install -c conda-forge hdbscan
+conda install -c plotly plotly
+conda install networkx
+conda install -c conda-forge pygraphviz
+```
 
 Finally, enable ipywidgets in jupyter notebook
-> jupyter nbextension enable --py widgetsnbextension
 
+```
+jupyter nbextension enable --py widgetsnbextension
+```
 ### 2.2. Input requirements
 
 #### 2.2.1. Audio files
