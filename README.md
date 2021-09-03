@@ -68,7 +68,7 @@ For manual install, these are the core packages:
 Make sure to enable jupyter widgets with:
 >jupyter nbextension enable --py widgetsnbextension
 
-This is an example for a manual installation on Windows with Python 3.8.:
+#### This is an example for a manual installation on Windows with Python 3.8.:
 
 First, create your environment
 > conda create my_env
