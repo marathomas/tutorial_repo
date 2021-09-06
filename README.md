@@ -5,31 +5,24 @@ This tutorial contains a sequence of jupyter notebook files that help you genera
 
 ## 1. Structure
 
-    ├── notebooks     
+    ├── notebooks                              <- contains analysis scripts
     │   ├── 01_generate_spectrograms.ipynb      
-    │   ├── 02a_generate_UMAP_basic.ipynb       
-    │   ├── 02b_generate_UMAP_timeshift.ipynb  
-    │   ├── 03_UMAP_clustering.ipynb            
-    │   ├── 03_UMAP_eval.ipynb                  
-    │   ├── 03_UMAP_viz_part_1_prep.ipynb       
-    │   └── 03_UMAP_viz_part_2_tool.ipynb        
-    ├── audio                                  <- input soundfiles
+    │   ├── ...           
+    │   └── ...        
+    ├── audio                                  <- ! put your input soundfiles in this folder !
     │   ├── call_1.wav     
-    │   ├── call_2.wav     
-    │   ├── call_3.wav     
+    │   ├── call_2.wav         
     │   └── ...            
-    ├── functions                         
+    ├── functions                              <- contains functions that will be called in analysis scripts
     │   ├── audio_functions.py            
-    │   ├── custom_dist_functions.py      
-    │   ├── evaluation_functions.py       
-    │   ├── plot_functions.py             
-    │   └── preprocessing_functions.py    
-    ├── data 
-    │   └── info_file.csv                      <- input metadata file
+    │   ├── ...                
+    │   └── ...    
+    ├── data                                   <- ! put a .csv metadata file of your input in this folder !
+    │   └── info_file.csv                     
     ├── parameters                             
-    │   └── spec_params.py                     
-    ├── environments 
-    │   └── umap_tut_env.yaml
+    │   └── spec_params.py                     <- this file contains parameters for spectrogramming (fft_win, fft_hop...)
+    ├── environments    
+    │   └── umap_tut_env.yaml                  <- conda environment file (linux)
     ├── ... 
     
     
@@ -98,6 +91,7 @@ Finally, enable ipywidgets in jupyter notebook
 ```
 jupyter nbextension enable --py widgetsnbextension
 ```
+
 ### 2.2. Input requirements
 
 #### 2.2.1. Audio files
