@@ -104,6 +104,9 @@ Finally, enable ipywidgets in jupyter notebook
 jupyter nbextension enable --py widgetsnbextension
 ```
 
+Clone this repository or download as zip and unpack. Make sure to have the same structure of subdirectories as described in section "Structure" and prepare your input files as described in section "Input requirements".
+
+
 Start jupyter notebook with
 ```
 jupyter notebook
@@ -116,7 +119,7 @@ and select the first jupyter notebook file to start your analysis (see section "
 
 #### 2.2.1. Audio files
 
-Put your dataset of sound files in the subfolder /audio (make sure that the /audio folder contains __only__ your input files, nothing else).  
+Use the provided example data (LINK) or put your own dataset of sound files in the subfolder "/audio" (make sure that the /audio folder contains __only__ your input files, nothing else).  
 Each sound file should contain a single vocalization or syllable.
 (You may have to detect and extract such vocal elements first, if working with acoustic recordings.)
 
@@ -128,7 +131,7 @@ but note that it comes at the cost of increased computation time.
 
 #### 2.2.2. [Optional: Info file]
 
-You can add a ";"-separated .csv file with headers containing the filenames of the input audio, some labels and any other additional metadata (if available). 
+Use the .csv file provided with the example data (LINK) or, if you are using your own data,´ add a ";"-separated .csv file with headers containing the filenames of the input audio, some labels and any other additional metadata (if available) in the subfolder "/data". 
 If some or all labels are unknown, there should still be a label column and unkown labels should be marked with "unknown".
 
 Structure of info_file.csv:
