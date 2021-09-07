@@ -30,7 +30,7 @@ This tutorial contains a sequence of jupyter notebook files that help you genera
 
 ### 2.1. Packages, installations etc.
 
-Python>=3.8. is recommended. A conda environment file is included in /environments. This file was created on Linux, so if you have a different operating system, the package dependencies might be different and I would recommend to __install the packages manually__. 
+Python>=3.8. is recommended. I would recommend to __install the packages manually__, but a conda environment file is also included in /environments (created on Linux! Dependencies may differ for other OS!).
 
 For manual install, these are the core packages:
 
@@ -48,22 +48,34 @@ For manual install, these are the core packages:
 
 >voila
 
->graphviz
-
 >hdbscan
 
 >plotly
+
+>graphviz
 
 >networkx
 
 >pygraphviz
 
+
 Make sure to enable jupyter widgets with:
 >jupyter nbextension enable --py widgetsnbextension
 
-#### This is an example for a manual installation on Windows with Python 3.8.:
 
-First, create your environment
+__NOTE__: Graphviz, networkx and pygraphviz are only required for one plot, so if you fail to install them, you can still run 99 % of the code.
+
+
+#### This is an example for a manual installation on Windows with Python 3.8. and conda:
+
+If you haven't worked with Python and/or conda (a package manager), an easy way to get started is to install anaconda or miniconda (only the basic/core parts of anaconda) first:
+
+- Anaconda: [https://www.anaconda.com/products/individual-d](https://www.anaconda.com/products/individual-d)
+
+- Miniconda: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
+
+After successful installation, create and activate your environment with conda:
+
 ```
 conda create my_env
 conda activate my_env
