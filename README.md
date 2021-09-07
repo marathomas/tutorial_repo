@@ -104,6 +104,13 @@ Finally, enable ipywidgets in jupyter notebook
 jupyter nbextension enable --py widgetsnbextension
 ```
 
+Start jupyter notebook with
+```
+jupyter notebook
+```
+
+and select the first jupyter notebook file to start your analysis (see section "Where to start").
+
 ### 2.2. Input requirements
 
 #### 2.2.1. Audio files
