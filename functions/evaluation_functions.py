@@ -568,7 +568,7 @@ def plot_within_without(embedding,labels, distance_metric = "euclidean", outname
 
         plt.vlines(x=np.mean(self_dists[calltype]),ymin=0,ymax=ymax,color='green', linestyles='dotted')
 
-        n, bins, patches = plt.hist(x=other_dists[calltype], label="outside", density=density,
+        n, bins, patches = plt.hist(x=other_dists[calltype], label="between", density=density,
                                   bins=np.linspace(xmin, xmax, nbins), color='red',
                                   alpha=0.5, rwidth=0.85)
 
