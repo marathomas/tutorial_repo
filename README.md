@@ -4,7 +4,7 @@
 This tutorial contains a sequence of jupyter notebook files that help you generate latent space representations from input audio files, evaluate them and generate an interactive visualization.
 
 <p align="center">
-  <img src="/example_imgs/tool_image.png" width="550" height="260" />
+  <img src="/example_imgs/tool_image.png" width="550" height="300" />
 </p>
 
 ## 1. Structure
