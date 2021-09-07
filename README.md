@@ -111,11 +111,13 @@ jupyter notebook
 
 and select the first jupyter notebook file to start your analysis (see section "Where to start").
 
+
 ### 2.2. Input requirements
 
 #### 2.2.1. Audio files
 
-You need a dataset of sound files, each containing a single vocalization or syllable as input (in /audio). 
+Put your dataset of sound files in the subfolder /audio (make sure that the /audio folder contains __only__ your input files, nothing else).  
+Each sound file should contain a single vocalization or syllable.
 (You may have to detect and extract such vocal elements first, if working with acoustic recordings.)
 
 Ideally, start and end of the sound file correspond exactly to start and end of the vocalization. 
@@ -124,9 +126,9 @@ Otherwise, vocalizations may appear dissimilar or distant in latent space simply
 If it is not possible to mark the start times correctly, use the timeshift option to generate UMAP embeddings,
 but note that it comes at the cost of increased computation time.
 
-#### 2.2.2. Info file
+#### 2.2.2. [Optional: Info file]
 
-You need a ";"-separated .csv file with headers containing the filenames of the input audio, some labels and any other additional metadata (if avilable). 
+You can add a ";"-separated .csv file with headers containing the filenames of the input audio, some labels and any other additional metadata (if available). 
 If some or all labels are unknown, there should still be a label column and unkown labels should be marked with "unknown".
 
 Structure of info_file.csv:
@@ -136,6 +138,8 @@ Structure of info_file.csv:
     | call_1.wav | alarm   |  ...   |  ....   
     | call_2.wav | contact |  ...   |  ....  
     | ...        |  ...    |  ...   |  ....   
+
+If you don't provide an info_file.csv, a default one will be generated, containing ALL files that are found in /audio and with all vocalizations labelled as "unknown".
 
 
 ## 3. Where to start
