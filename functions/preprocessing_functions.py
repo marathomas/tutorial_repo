@@ -14,10 +14,6 @@ def calc_zscore(s):
     spec : 2D numpy array (numeric)
            the z-transformed array
 
-    Example
-    -------
-    >>> 
-
     """
     spec = s.copy()
     mn = np.mean(spec)
@@ -44,10 +40,6 @@ def pad_spectro(spec,maxlen):
                   a zero-padded spectrogram S(X,maxlen) with X frequency bins 
                   and maxlen timeframes
 
-    Example
-    -------
-    >>> 
-
     """
     padding = maxlen - spec.shape[1]
     z = np.zeros((spec.shape[0],padding))
@@ -73,11 +65,7 @@ def pad_transform_spectro(spec,maxlen):
     Returns
     -------
     trans_spec : 1D numpy array (numeric)
-                 the padded and flattened spectrogram
-               
-    Example
-    -------
-    >>> 
+                 the padded and flattened spectrogram 
 
     """       
     flat_spec = spec.flatten()

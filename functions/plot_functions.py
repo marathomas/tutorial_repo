@@ -24,8 +24,42 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-# 2D plot
+
 def umap_2Dplot(x,y, scat_labels, mycolors, outname=None, showlegend=True):
+    """
+    Function that creates (and saves) 2D plot from an
+    input dataset, color-colored by the provided labels.
+
+    Parameters
+    ----------
+    x : 1D numpy array (numeric) or list
+        x coordinates of datapoints
+                
+    y: 1D numpy array (numeric) or list 
+       y coordinates of datapoints
+    
+    scat_labels: List-of-Strings
+                 Datapoint labels
+                     
+    mycolors: String or List-of-Strings
+              Seaborn color palette name (e.g. "Set2") or list of
+              colors (Hex value strings) used for coloring datapoints
+              (e.g. ["#FFEBCD","#0000FF",...])
+                     
+    outname: String
+             Output filename at which plot will be saved
+             No plot will be saved if outname is None
+             (e.g. "my_folder/my_img.png")
+             
+    showlegend: Boolean
+                Show legend if True, else don't
+                
+    Returns
+    -------
+    
+    -
+             
+    """
     
     labeltypes = sorted(list(set(scat_labels)))
     pal = sns.color_palette(mycolors, n_colors=len(labeltypes))
@@ -49,7 +83,43 @@ def umap_2Dplot(x,y, scat_labels, mycolors, outname=None, showlegend=True):
 
 
 def umap_3Dplot(x,y,z,scat_labels, mycolors,outname=None, showlegend=True):
+    """
+    Function that creates (and saves) 3D plot from an
+    input dataset, color-colored by the provided labels.
+
+    Parameters
+    ----------
+    x : 1D numpy array (numeric) or list
+        x coordinates of datapoints
+                
+    y: 1D numpy array (numeric) or list 
+       y coordinates of datapoints
+
+    z: 1D numpy array (numeric) or list 
+       z coordinates of datapoints
     
+    scat_labels: List-of-Strings
+                 Datapoint labels
+                     
+    mycolors: String or List-of-Strings
+              Seaborn color palette name (e.g. "Set2") or list of
+              colors (Hex value strings) used for coloring datapoints
+              (e.g. ["#FFEBCD","#0000FF",...])
+                     
+    outname: String
+             Output filename at which plot will be saved
+             No plot will be saved if outname is None
+             (e.g. "my_folder/my_img.png")
+             
+    showlegend: Boolean
+                Show legend if True, else don't
+                
+    Returns
+    -------
+    
+    -
+             
+    """    
     labeltypes = sorted(list(set(scat_labels)))
     pal = sns.color_palette(mycolors, n_colors=len(labeltypes))
     color_dict = dict(zip(labeltypes, pal))
@@ -91,13 +161,38 @@ def umap_3Dplot(x,y,z,scat_labels, mycolors,outname=None, showlegend=True):
     
     if outname: plt.savefig(outname, facecolor="white")
 
-# Example use:
-#mara_3Dplot(df['UMAP1'], df['UMAP2'], df['UMAP3'],df.label, "Set2", "myplot.jpg")
-
 
 
 def plotly_viz(x,y,z,scat_labels, mycolors):
+    """
+    Function that creates interactive 3D plot with plotly from
+    an input dataset, color-colored by the provided labels.
+
+    Parameters
+    ----------
+    x : 1D numpy array (numeric) or list
+        x coordinates of datapoints
+                
+    y: 1D numpy array (numeric) or list 
+       y coordinates of datapoints
+
+    z: 1D numpy array (numeric) or list 
+       z coordinates of datapoints
     
+    scat_labels: List-of-Strings
+                 Datapoint labels
+                     
+    mycolors: String or List-of-Strings
+              Seaborn color palette name (e.g. "Set2") or list of
+              colors (Hex value strings) used for coloring datapoints
+              (e.g. ["#FFEBCD","#0000FF",...])
+                
+    Returns
+    -------
+    
+    -
+             
+    """     
     labeltypes = sorted(list(set(scat_labels)))
     pal = sns.color_palette(mycolors, n_colors=len(labeltypes))
     color_dict = dict(zip(labeltypes, pal))
@@ -121,6 +216,4 @@ def plotly_viz(x,y,z,scat_labels, mycolors):
 
     return fig
 
-# Example use:
-#plotly_viz(df['UMAP1'], df['UMAP2'], df['UMAP3'],df.label, "Set2")
 

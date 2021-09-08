@@ -21,6 +21,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import string
 from scipy.spatial.distance import pdist, squareform
+import sklearn
+from sklearn.metrics.pairwise import euclidean_distances  
+
 
 def make_nn_stats_dict(calltypes, labels, nb_indices):
     """
@@ -539,6 +542,53 @@ class sil:
             
             
 def plot_within_without(embedding,labels, distance_metric = "euclidean", outname=None,xmin=0, xmax=12, ymax=0.5, nbins=50,nrows=4, ncols=2, density=True):
+    """
+    Function that plots distribution of pairwise distances within a class
+    vs. towards other classes ("between"), for each class in a dataset
+
+    Parameters
+    ----------
+    embedding : 2D numpy array (numeric)
+                a dataset E(X,Y) with X datapoints and Y dimensions
+                
+    labels: 1D numpy array (string) or list of strings
+            vector/list of class labels in dataset
+
+    
+    distance_metric: String
+                     Type of distance metric, e.g. "euclidean", "manhattan"...
+                     all scipy.spatial.distance metrics are allowed
+                     
+    outname: String
+             Output filename at which plot will be saved
+             No plot will be saved if outname is None
+             (e.g. "my_folder/my_img.png")
+             
+    xmin, xmax: Numeric
+                Min and max of x-axis
+    
+    ymax: Numeric
+          Max of yaxis
+    
+    nbins: Integer
+           Number of bins in histograms
+    
+    nrows: Integer
+           Number of rows of subplots
+    
+    ncols: Integer
+           Number of columns of subplots
+    
+    density: Boolean
+             Plot density histogram if density=True
+             else plot frequency histogram
+                
+    Returns
+    -------
+    
+    -
+             
+    """
     
     distmat_embedded = squareform(pdist(embedding, metric=distance_metric))
     labels = np.asarray(labels)
@@ -580,10 +630,10 @@ def plot_within_without(embedding,labels, distance_metric = "euclidean", outname
         plt.ylim(0, ymax)
         
         if (i%ncols)==1:
-             ylabtitle = 'Density' if density else 'Frequency'
-             plt.ylabel(ylabtitle)
+            ylabtitle = 'Density' if density else 'Frequency'
+            plt.ylabel(ylabtitle)
         if i>=((nrows*ncols)-ncols):
-             plt.xlabel(distance_metric+' distance')
+            plt.xlabel(distance_metric+' distance')
 
         i=i+1
 
@@ -592,10 +642,31 @@ def plot_within_without(embedding,labels, distance_metric = "euclidean", outname
         plt.savefig(outname, facecolor="white")
     
 
-import sklearn
-from sklearn.metrics.pairwise import euclidean_distances  
-
 def next_sameclass_nb(embedding, labels):
+    """
+    Function that calculates the neighborhood degree of the closest 
+    same-class neighbor for a given labelled dataset. Calculation is
+    based on euclidean distance and done for each datapoint. E.g. 6 
+    means that the 6th nearest neighbor of this datapoint is the first
+    to be of the same-class (the first 5 nearest neighbors are of
+    different class)
+
+    Parameters:
+    ----------
+    embedding : 2D numpy array (numeric)
+                a dataset E(X,Y) with X datapoints and Y dimensions
+                
+    labels: 1D numpy array (string) or list of strings
+            vector/list of class labels in dataset
+    
+    Returns:
+    -------
+    
+    nbs_to_sameclass: 1D numpy array
+                      nearest same-class neighborhood degree for
+                      each datapoint of the input dataset
+    
+    """
     indices = []
     distmat = euclidean_distances(embedding, embedding)
     k = embedding.shape[0]-1
@@ -631,7 +702,8 @@ def next_sameclass_nb(embedding, labels):
     
         nbs_to_sameclass.append(first_occurrence)
     
-    return(np.asarray(nbs_to_sameclass))
+    nbs_to_sameclass = np.asarray(nbs_to_sameclass)
+    return(nbs_to_sameclass)
 
 
 
