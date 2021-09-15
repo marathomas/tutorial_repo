@@ -81,7 +81,7 @@ If you haven't worked with Python and/or conda (a package manager), an easy way 
 After successful installation, create and activate your environment with conda:
 
 ```
-conda create my_env
+conda create --name my_env
 conda activate my_env
 ```
 
