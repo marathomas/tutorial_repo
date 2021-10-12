@@ -9,6 +9,8 @@ This tutorial contains a sequence of jupyter notebook files that help you genera
 
 ## 1. Structure
 
+Keep the directory structure the way it is and put your data in the 'audio' and 'data' folder. Do not change the folder structure or location of notebooks or function files!
+
     ├── notebooks                              <- contains analysis scripts
     │   ├── 01_generate_spectrograms.ipynb      
     │   ├── ...           
