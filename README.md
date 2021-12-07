@@ -170,5 +170,5 @@ If you don't provide an info_file.csv, a default one will be generated, containi
 
 ## 4. Data accessibility
 
-This data is part of an ongoing study and is protected by copyright law, meaning that no one may reproduce, distribute, or create derivative works from it. If you want to access data, please get in touch.
+This data is part of an ongoing study and is protected by copyright law, meaning that no one may reproduce, distribute, or create derivative works from it.
 
