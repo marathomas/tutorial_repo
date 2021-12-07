@@ -15,7 +15,7 @@ Keep the directory structure the way it is and put your data in the 'audio' and 
     │   ├── 01_generate_spectrograms.ipynb      
     │   ├── ...           
     │   └── ...        
-    ├── audio                                  <- ! put your input soundfiles in this folder !
+    ├── audio                                  <- ! put your input soundfiles in this folder or unzip the provided example audio!
     │   ├── call_1.wav     
     │   ├── call_2.wav         
     │   └── ...            
@@ -23,7 +23,7 @@ Keep the directory structure the way it is and put your data in the 'audio' and 
     │   ├── audio_functions.py            
     │   ├── ...                
     │   └── ...    
-    ├── data                                   <- ! put a .csv metadata file of your input in this folder !
+    ├── data                                   <- ! put a .csv metadata file of your input in this folder or use the provided example csv!
     │   └── info_file.csv                     
     ├── parameters                             
     │   └── spec_params.py                     <- this file contains parameters for spectrogramming (fft_win, fft_hop...)
@@ -125,9 +125,13 @@ and select the first jupyter notebook file to start your analysis (see section "
 
 #### 2.2.1. Audio files
 
-Use the provided example data (LINK) or put your own dataset of sound files in the subfolder "/audio" (make sure that the /audio folder contains __only__ your input files, nothing else).  
-Each sound file should contain a single vocalization or syllable.
+All audio input files need to be in a subfolder /audio. This folder should not contain any other files.
+
+To use the provided example data of meerkat calls, please unzip the file 'audio_please_unzip.zip' and verify that all audio files have been unpacked into an /audio folder according to the structure described in Section1. 
+
+To use your own data, create a subfolder "/audio" and put your sound files there (make sure that the /audio folder contains __only__ your input files, nothing else). Each sound file should contain a single vocalization or syllable.
 (You may have to detect and extract such vocal elements first, if working with acoustic recordings.)
+
 
 Ideally, start and end of the sound file correspond exactly to start and end of the vocalization. 
 If there are delays in the onset of the vocalizations, these should be the same for all sound files. 
@@ -137,10 +141,10 @@ but note that it comes at the cost of increased computation time.
 
 #### 2.2.2. [Optional: Info file]
 
-Use the .csv file provided with the example data (LINK) or, if you are using your own data,´ add a ";"-separated .csv file with headers containing the filenames of the input audio, some labels and any other additional metadata (if available) in the subfolder "/data". 
+Use the provided info_file.csv file for the example audio data or, if you are using your own data,´ add a ";"-separated info_file.csv file with headers containing the filenames of the input audio, some labels and any other additional metadata (if available) in the subfolder "/data". 
 If some or all labels are unknown, there should still be a label column and unkown labels should be marked with "unknown".
 
-Structure of info_file.csv:
+Structure of info_file.csv must be:
 
     | filename   | label   | ...    |  .... 
     -----------------------------------------
