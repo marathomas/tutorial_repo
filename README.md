@@ -1,6 +1,8 @@
 # Tutorial for generating and evaluating latent-space representations of vocalizations using UMAP
 
 [![DOI](https://zenodo.org/badge/400540617.svg)](https://zenodo.org/badge/latestdoi/400540617)
+
+
 This tutorial contains a sequence of jupyter notebook files that help you generate latent space representations from input audio files, evaluate them and generate an interactive visualization.
 
 <p align="center">
