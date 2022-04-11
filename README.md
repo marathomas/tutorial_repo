@@ -172,5 +172,4 @@ If you don't provide an info_file.csv, a default one will be generated, containi
 
 ## 4. Data accessibility
 
-This data is part of an ongoing study and is protected by copyright law, meaning that no one may reproduce, distribute, or create derivative works from it.
-
+All code is under MIT-license. Exclusive copyright applies to the audio data file (audio_please_unzip.zip), meaning that you cannot reproduce, distribute or create derivative works from it. See license for details.
