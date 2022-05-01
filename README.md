@@ -172,4 +172,4 @@ If you don't provide an info_file.csv, a default one will be generated, containi
 
 ## 4. Data accessibility
 
-All code is under MIT-license. Exclusive copyright applies to the audio data file (audio_please_unzip.zip), meaning that you cannot reproduce, distribute or create derivative works from it. See license for details.
+All code is under MIT-license. Exclusive copyright applies to the audio data file (audio_please_unzip.zip), meaning that you cannot reproduce, distribute or create derivative works from it. You may use this data to test the provided code, but not for any other purposes. If you are interested in using the exemplary data beyond the sole purpose of testing the provided code, please get touch with Prof. Marta Manser. See license for details.
